@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <div class="topbar" style="width: 100%; z-index: 110; position: relative; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16), 0 1px 2px 0 rgba(0,0,0,0.12); background-color: whitesmoke; height: 60px">
+          <div style="display: table-cell">
+            <img style="display: inline-block;margin:5px 10px; height: 50px" src="http://www.irt-systemx.fr/v2/wp-content/themes/systemx-2/assets/img/systemx-logo.svg" class="systemxlogo">
+          </div>
+          <div style="display: table-cell; vertical-align: middle">
+            <strong>D&#233;monstrateur SVA v. 0.0.1</strong>
+          </div>
+        </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-item><ion-label>Search Text</ion-label></ion-item>
+  	<form (ngSubmit)="search()">
+  	<ion-item>
+   		<ion-input type="text" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"></ion-input>
+ 	</ion-item>
+ 	<button ion-button (click)="search()">search</button>
+  	</form>
+ 
+
+  	<ion-list>
+    	<ion-card *ngFor="let terrain of terrains">
+      	<ion-card-header>
+			<!-- <ion-icon name="ios-paper"></ion-icon> -->
+			<ion-item href="" (click)="detail(terrain)"><b> {{ terrain.name }} </b> {{ terrain.description }}</ion-item>
+	    </ion-card-header>
+      	<!-- <ion-card-content>
+			<p><b>Description(s):</b> {{ terrain.description }}</p>
+			<p><b>Speed(s):</b> {{ terrain.maxspeed }}</p>
+			<p><b>File name:</b> {{ terrain.filename }}</p>
+      	</ion-card-content> -->
+    	</ion-card>
+  </ion-list>
+</ion-content>

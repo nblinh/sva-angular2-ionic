@@ -1,0 +1,16 @@
+---
+pipeline: "maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "sva"
+projectName: "sva"
+codeReview: false
+links:
+  Git: "http://gogs/ba-linh.nguyen/sva.git"
+  Job: "http://jenkins.default.k8s.local/job/sva"
+  Production: "http://10.3.0.116:80/kubernetes/pods?namespace=default-production"
+  Staging: "http://10.3.0.116:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://10.3.0.116:80/kubernetes/pods?namespace=default-testing"
+environments:
+  Testing: "defalut-staging"
+  Staging: "default-staging"
+  Production: "default-production"
+useLocalFlow: true

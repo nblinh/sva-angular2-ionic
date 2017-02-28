@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Return to search</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3><span>{{terrain.name}}</span></h3>
+  <span>description: {{terrain.description}}</span><br>
+  <span>landes: {{terrain.landes}}</span><br>
+  <span>oneway: {{terrain.oneway}}</span><br>
+  <span>maxspeed: {{terrain.roadSign}}</span><br>
+  <span>maxspeed: {{terrain.maxspeed}}</span><br>
+  <span>filename: {{terrain.filename}}
+  <a href="http://terrain-angular2-ionic.default-staging.k8s.imm.ovh/maps/SVA/terrains/Terrains_de_reference/{{terrain.filename}}.zip" 
+  		target="_self" download="{{terrain.filename}}.zip">Telecharger</a></span><br>
+  <img src="http://terrain-angular2-ionic.default-staging.k8s.imm.ovh/maps/SVA/terrains/Terrains_de_reference/{{terrain.filename}}.png"/>
+</ion-content>
